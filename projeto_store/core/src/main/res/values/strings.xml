@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Phone Store</string>
+    <string name="to_cart">Cart</string>
+    <string name="to_favourites">Favourites</string>
+    <string name="to_account">Account</string>
+    <string name="example_location">Zihuatanejo, Gro</string>
+    <string name="select_category">Select Category</string>
+    <string name="view_all">view all</string>
+    <string name="phones">Phones</string>
+    <string name="computer">Computer</string>
+    <string name="health">Health</string>
+    <string name="books">Books</string>
+    <string name="search_hint">Search</string>
+    <string name="hot_sales">Hot Sales</string>
+    <string name="best_sellers">Best Sellers</string>
+    <string name="see_more">see more</string>
+    <string name="buy_now"><u>Buy now!</u></string>
+    <string name="hot_sales_mock_title">Some phone</string>
+    <string name="hot_sales_mock_subtitle"><u>Per aspera ad astra</u></string>
+    <string name="is_new">New</string>
+    <string name="bestseller_mock_title">Samsung Galaxy</string>
+    <string name="mock_price">$1,047</string>
+    <string name="mock_old_price"><strike>$2,047</strike></string>
+    <string name="done">Done</string>
+    <string name="filter_options">Filter options</string>
+    <string name="default_spinner_item">Something</string>
+    <string name="brands">Brands</string>
+    <string name="price">Price</string>
+    <string name="size">Size</string>
+    <string name="details">Product Details</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="select_color">Select color and capacity</string>
+    <string name="tab_default">This is definitely a tab</string>
+    <string name="mock_cpu">Exynos</string>
+    <string name="mock_camera">108 + 12mp</string>
+    <string name="mock_ssd">8 GB</string>
+    <string name="mock_sd">256 GB</string>
+    <string name="gb">%1$s GB</string>
+
+    <string name="my_cart">My Cart</string>
+    <string name="checkout">Checkout</string>
+    <string name="add_address">Add address</string>
+    <string name="total">Total</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="free">Free</string>
+    <string name="price_for_cart">$%1$d.00</string>
+    <string name="price_with_dollar">$%1$d</string>
+    <string name="content_desc">Sample content description</string>
+    <string-array name="tabs">
+        <item>Shop</item>
+        <item>Details</item>
+        <item>Features</item>
+    </string-array>
+
+</resources>
