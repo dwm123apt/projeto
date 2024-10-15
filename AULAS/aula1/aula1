@@ -1,0 +1,65 @@
+A) Turma de um curso de graduação
+
+Classes:
+
+    Curso
+        Atributos:
+            nome: String
+            código: String
+            disciplinas: List<Disciplina>
+
+    Disciplina
+        Atributos:
+            nome: String
+            código: String
+            cargaHoraria: int
+            sala: String
+
+    Turma
+        Atributos:
+            semestre: String
+            curso: Curso
+            disciplinas: List<Disciplina>
+            alunos: List<Aluno>
+
+    Aluno
+        Atributos:
+            nome: String
+            matricula: String
+            email: String
+
+B) Transportadora "Super Cometa"
+
+Classes:
+
+    Veículo
+        Atributos:
+            placa: String
+            modelo: String
+            ano: int
+            motorista: Motorista
+            localizacao: Localizacao
+
+    Motorista
+        Atributos:
+            nome: String
+            cpf: String
+            habilitacao: String
+
+    Localizacao
+        Atributos:
+            latitude: double
+            longitude: double
+            dataHora: String
+
+    Controlador
+        Atributos:
+            veiculos: List Veículo
+
+
+
+
+
+
+1= tablet
+2= android
