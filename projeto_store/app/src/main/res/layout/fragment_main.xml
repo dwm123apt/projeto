@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.MainFragment"
+    android:background="?colorPrimary">
+
+    <LinearLayout
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/content_desc"
+            android:src="@drawable/ic_location" />
+        <TextView
+            android:id="@+id/location_tv"
+            android:paddingStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/example_location" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/filter_button"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_filter"
+        android:clickable="true"
+        android:contentDescription="@string/content_desc"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/location"
+        app:layout_constraintBottom_toBottomOf="@+id/location"/>
+
+    <TextView
+        android:id="@+id/select_cat_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_category"
+        android:textAppearance="@style/HeadlineTextAppearance"
+        app:layout_constraintTop_toBottomOf="@+id/location"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="18dp"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/see_all_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_all"
+        android:textAppearance="@style/ExtendButtonTextAppearance"
+        app:layout_constraintTop_toTopOf="@+id/select_cat_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/select_cat_tv"
+        android:layout_marginEnd="18dp"/>
+
+    <RadioGroup
+        android:id="@+id/categoriesRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_cat_tv"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioPhones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:background="@null"
+            android:drawableTop="@drawable/phone_icon_selector"
+            android:gravity="center"
+            android:text="@string/phones"
+            android:textColor="@color/radio_text_selector"
+            android:textSize="12sp"
+            android:checked="true"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioComputer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:background="@null"
+            android:drawableTop="@drawable/computer_icon_selector"
+            android:gravity="center"
+            android:text="@string/computer"
+            android:textColor="@color/radio_text_selector"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioHealth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:background="@null"
+            android:drawableTop="@drawable/health_icon_selector"
+            android:gravity="center"
+            android:text="@string/health"
+            android:textColor="@color/radio_text_selector"
+            android:textSize="12sp" />
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radioBooks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:background="@null"
+            android:drawableTop="@drawable/book_icon_selector"
+            android:gravity="center"
+            android:text="@string/books"
+            android:textColor="@color/radio_text_selector"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_search"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoriesRadioGroup"
+        app:layout_constraintEnd_toStartOf="@+id/qr_search"
+        app:hintTextColor="?colorPrimary"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:shapeAppearance="@style/Rounded"
+        app:endIconMode="custom"
+        app:startIconDrawable="@drawable/ic_baseline_search_24"
+        app:startIconTint="?colorSecondary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_search"
+            android:background="@drawable/nav_background_curved"
+            android:backgroundTint="?colorOnSecondary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/search_hint"
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <include layout="@layout/qr_layout"
+        android:id="@+id/qr_search"
+        android:clickable="true"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+
+        app:layout_constraintTop_toTopOf="@+id/ti_search"
+        app:layout_constraintBottom_toBottomOf="@+id/ti_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="32dp"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/main_bottom_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ti_search">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/hot_sales_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="@string/hot_sales"
+                android:textAppearance="@style/HeadlineTextAppearance"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/see_all_hot_sales_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:clickable="true"
+                android:text="@string/see_more"
+                android:textAppearance="@style/ExtendButtonTextAppearance"
+                app:layout_constraintBottom_toBottomOf="@+id/hot_sales_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/hot_sales_tv" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewHotSales"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hot_sales_tv"
+                tools:listitem="@layout/hot_sales_card" />
+
+            <ProgressBar
+                android:id="@+id/progressBarRVHotSales"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:padding="180dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hot_sales_tv"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/upper_rv_barrier"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="progressBarRVHotSales, recyclerViewHotSales"/>
+
+            <TextView
+                android:id="@+id/best_seller_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/best_sellers"
+                android:textAppearance="@style/HeadlineTextAppearance"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/upper_rv_barrier" />
+
+            <TextView
+                android:id="@+id/see_all_best_sellers_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:clickable="true"
+                android:text="@string/see_more"
+                android:textAppearance="@style/ExtendButtonTextAppearance"
+                app:layout_constraintBottom_toBottomOf="@+id/best_seller_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/best_seller_tv" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewBestSellers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/best_seller_tv"
+                app:spanCount="2"
+                tools:listitem="@layout/best_seller_card" />
+
+            <ProgressBar
+                android:id="@+id/progressBarRVBestSellers"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:padding="180dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/best_seller_tv"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/bottom_menu_bar"
+        android:id="@+id/main_bottom_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
